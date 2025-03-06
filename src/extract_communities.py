@@ -9,6 +9,7 @@ obj_path="../data/obj"
 log_path="../logs/"
 plot_path="../plots/"
 
+
 ## -----------------------------------------------------------------------------
 ##                             CD algorithm calls
 ## -----------------------------------------------------------------------------
@@ -272,8 +273,8 @@ def experiment(network, dem_list=[]):
 		"leiden": run_leiden(G),
 		"walktrap": run_walktrap(G),
 		"pycombo": run_combo(G),
-		"infomap": run_infomap(G),
-		"sbm_dl": run_sbm_dl(G)
+		"infomap": run_infomap(G)
+		#,"sbm_dl": run_sbm_dl(G)
 	}
 
 	# # Print detected communities for each algorithm
@@ -290,14 +291,13 @@ def experiment(network, dem_list=[]):
 
 	for algo in communities:
 
-		print(f"{algo}")
+		
 
 		full_balance, F_dist = fairness_base(
 			G,
 			communities[algo].communities,
 			full_color_dist
 		) 
-
 		overall_balance, overall_fexp, balance_scores, fexp_scores, phi_scores = weighted_intersectional_balance(
 			G, 
 			communities[algo].communities, 
@@ -305,13 +305,12 @@ def experiment(network, dem_list=[]):
 			{d:1.0 for d in dem_list} # change later with arg
 		)
 
+		# @DEBUG
+		print(f"{algo}")
 		print(full_balance)
 		print(F_dist)
-
 		print(overall_balance)
 		print(balance_scores)
-
-
 
 	return
 
