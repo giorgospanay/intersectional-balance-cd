@@ -309,14 +309,17 @@ def experiment(network, dem_list=[]):
 		print(f"{algo}")
 		print(full_balance)
 		print(F_dist)
+		print("-----------")
 		print(overall_balance)
 		print(balance_scores)
+		print(phi_scores)
+		print("_-_-_-_-_-_-_")
 
 	return
 
 
 def main():
-	#experiment("proximity_full",dem_list=["subject","gender"])
+	experiment("proximity_full",dem_list=["subject","gender"])
 	experiment("facebook_full",dem_list=["gender","education"])
 
 
