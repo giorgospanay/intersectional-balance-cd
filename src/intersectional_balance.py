@@ -1,13 +1,35 @@
+import itertools
+from collections import defaultdict, deque
+import random
+import math
+import pandas as pd
+import statistics
+
+import networkx as nx
+from networkx.algorithms.community import modularity
+from networkx.utils import py_random_state
+
+import pickle
+import sys
+import time
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+# Globals for paths
+obj_path="../data/obj"
+log_path="../logs/"
+plot_path="../plots/"
 
 
-
-
+# Calculates a weighted balance score for a partition of G
 def weighted_intersectional_balance(G, partition, dems_dist, dems_weight):
 	# Keep track of all demographic balance distributions
 	balance_scores={}
 	fexp_scores={}
 	phi_scores={}
 	nci_list=[]
+
+	n=G.number_of_nodes()
 
 	# Failsafe: If sum of dems_weight is 0, return.
 	if sum([dems_weight[d] for d in dems_weight])==0: 
@@ -26,7 +48,7 @@ def weighted_intersectional_balance(G, partition, dems_dist, dems_weight):
 		fexp_scores[d]=[]
 
 		# Calculate phi
-		c_least=min([dems_dist[c][j] for j in color_list])
+		c_least=min([dems_dist[d][j] for j in color_list])
 		phi=(K_cols-1)*c_least/(len(G.nodes())-c_least)
 		# Track phi score for demographic
 		phi_scores[d]=phi
@@ -49,7 +71,7 @@ def weighted_intersectional_balance(G, partition, dems_dist, dems_weight):
 				# First, calculate extra nodes for the community
 				sum_dist=0
 				for col in color_list:
-					sum_dist+=math.floor(color_dist[col]*n_ci/n)
+					sum_dist+=math.floor(dems_dist[d][col]*n_ci/n)
 				n_extra=n_ci-sum_dist
 
 				# Calculate F_exp(c_i)
@@ -104,8 +126,8 @@ def weighted_intersectional_balance(G, partition, dems_dist, dems_weight):
 			n_ci=len(c)
 			bsum+=(n_ci*balance_scores[d][i])
 			fsum+=(n_ci*fexp_scores[d][i])
-		balance_score_sum+=(dems_weight[d]*bsum)
-		fexp_score_sum+=(dems_weight[d]*fsum)
+		balance_score_sum+=(dems_weight[d]*bsum/n)
+		fexp_score_sum+=(dems_weight[d]*fsum/n)
 	# Get final scores
 	overall_balance=balance_score_sum/sum([dems_weight[d] for d in dems_weight])
 	overall_fexp=fexp_score_sum/sum([dems_weight[d] for d in dems_weight])
@@ -113,9 +135,67 @@ def weighted_intersectional_balance(G, partition, dems_dist, dems_weight):
 	# Return all tracked values
 	return overall_balance, overall_fexp, balance_scores, fexp_scores, phi_scores
 
-
+# @TODO: work on this
 def full_intersectional_balance(G, partition, dems_dist):
 	# for each combination of groups in all demographics, calculate balance
+	return
+
+
+def experiment(network,dems_weight,n_reps=3):
+	# Load network
+	with open(f"{obj_path}/{network}.nx","rb") as g_open:
+		net=pickle.load(g_open)
+
+	print(f"Network object {network} loaded.")
+	print(f"{network}: N={net.number_of_nodes()}, M={net.number_of_edges()}")
+
+	dems_dist={}
+
+	# For each demographic, get value distribution
+	for d in dems_weight:
+		colors=nx.get_node_attributes(net,d)
+
+		# Calculate demographic value ratios here
+		dems_dist[d]={}
+
+		# Calculate color distribution
+		for n_ind in net.nodes():
+			col=colors[n_ind]
+
+			# Add to dict if does not exist
+			if col not in dems_dist[d]:
+				dems_dist[d][col]=1
+			else:
+				dems_dist[d][col]+=1
+
+	print("Demographic distribution calculated.\n")
+	for d in dems_dist:
+		print(f"{d}:\n-----------")
+		for c in dems_dist[d]:
+			print(f"{c}:{dems_dist[d][c]}\n")
+
+
+	# Run Louvain, get partition
+	partition=nx.community.louvain_communities(net)
+
+	# Get balance scores
+	overall_balance,overall_fexp,balance_scores,fexp_scores,phi_scores = weighted_intersectional_balance(net, partition, dems_dist, dems_weight)
+
+
+	print(f"Overall weighted balance: {overall_balance}")
+	print(f"Overall weighted prop fairness: {overall_fexp}")
+
+	print(f"Distribution of weighted balance: {balance_scores}")
+	print(f"Distribution of weighted prop fairness: {fexp_scores}")
+
+	print(f"Phi scores: {phi_scores}")
+
+
+# Experiment in this setting using Louvain
+if __name__ == '__main__':
+	#experiment("proximity_dem",{"subject":1.0,"gender":1.0},2)
+	experiment("facebook_107_dem",{"gender":1.0,"education":1.0},2)
+
 
 
 
