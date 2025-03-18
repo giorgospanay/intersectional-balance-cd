@@ -85,9 +85,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[56])==1:
+			if int(ln[55])==1:
 				education_type="C"
-			elif int(ln[55])==1:
+			elif int(ln[54])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -100,9 +100,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[56])==1:
+			if int(ln[55])==1:
 				education_type="C"
-			elif int(ln[55])==1:
+			elif int(ln[54])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -118,9 +118,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[223])==1:
+			if int(ln[222])==1:
 				education_type="C"
-			elif int(ln[222])==1:
+			elif int(ln[221])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -133,9 +133,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[223])==1:
+			if int(ln[222])==1:
 				education_type="C"
-			elif int(ln[222])==1:
+			elif int(ln[221])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -150,9 +150,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[62])==1:
+			if int(ln[61])==1:
 				education_type="C"
-			elif int(ln[61])==1:
+			elif int(ln[60])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -165,9 +165,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[62])==1:
+			if int(ln[61])==1:
 				education_type="C"
-			elif int(ln[61])==1:
+			elif int(ln[60])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -182,9 +182,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[47])==1:
+			if int(ln[46])==1:
 				education_type="C"
-			elif int(ln[46])==1:
+			elif int(ln[45])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -197,9 +197,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[47])==1:
+			if int(ln[46])==1:
 				education_type="C"
-			elif int(ln[46])==1:
+			elif int(ln[45])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -214,9 +214,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[24])==1:
+			if int(ln[23])==1:
 				education_type="C"
-			elif int(ln[23])==1:
+			elif int(ln[22])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -229,9 +229,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[24])==1:
+			if int(ln[23])==1:
 				education_type="C"
-			elif int(ln[23])==1:
+			elif int(ln[22])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -246,9 +246,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[15])==1:
+			if int(ln[14])==1:
 				education_type="C"
-			elif int(ln[14])==1:
+			elif int(ln[13])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -261,9 +261,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[15])==1:
+			if int(ln[14])==1:
 				education_type="C"
-			elif int(ln[14])==1:
+			elif int(ln[13])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -278,9 +278,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[104])==1:
+			if int(ln[103])==1:
 				education_type="C"
-			elif int(ln[103])==1:
+			elif int(ln[102])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -293,9 +293,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[104])==1:
+			if int(ln[103])==1:
 				education_type="C"
-			elif int(ln[103])==1:
+			elif int(ln[102])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -310,9 +310,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[221])==1:
+			if int(ln[220])==1:
 				education_type="C"
-			elif int(ln[220])==1:
+			elif int(ln[219])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -325,9 +325,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[221])==1:
+			if int(ln[220])==1:
 				education_type="C"
-			elif int(ln[220])==1:
+			elif int(ln[219])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -342,9 +342,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[85])==1:
+			if int(ln[84])==1:
 				education_type="C"
-			elif int(ln[84])==1:
+			elif int(ln[83])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -357,9 +357,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[85])==1:
+			if int(ln[84])==1:
 				education_type="C"
-			elif int(ln[84])==1:
+			elif int(ln[83])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -374,9 +374,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[8])==1:
+			if int(ln[7])==1:
 				education_type="C"
-			elif int(ln[7])==1:
+			elif int(ln[6])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -389,9 +389,9 @@ def process_facebook_full():
 		color_lines=[line.rstrip().split(" ") for line in f_color]
 		for ln in color_lines:
 			# Get education type A/B/C
-			if int(ln[8])==1:
+			if int(ln[7])==1:
 				education_type="C"
-			elif int(ln[7])==1:
+			elif int(ln[6])==1:
 				education_type="B"
 			else: 
 				education_type="A"
@@ -412,19 +412,61 @@ def process_facebook_full():
 
 
 
+def process_twitch_full():
+	# Edgelist: large_twitch_edges.csv, color: large_twitch_features.csv
+	edges_lines=[]
+	color_lines=[]
 
+	with open(f"{raw_path}/twitch_gamers/large_twitch_edges.csv","r") as f_edges:
+		edges_lines=[line.rstrip().split(",") for line in f_edges]
+
+	with open(f"{raw_path}/twitch_gamers/large_twitch_features.csv","r") as f_color:
+		color_lines=[line.rstrip().split(",") for line in f_color]
+
+
+	# Create twitch network
+	net_twitch=nx.Graph()
+	# Add nodes and colors:
+	for i,ln in enumerate(color_lines):
+		# Ignore header line: 
+		## views,mature,life_time,created_at,updated_at,numeric_id,dead_account,language,affiliate
+		if i==0: continue
+		# Get streaming language
+		n_lang=ln[7]
+		if int(ln[1])==0:
+			# Mature=0 (low maturity streams) --red
+			net_twitch.add_node(int(ln[5]),color=f"red_{n_lang}",maturity="red",language=f"{n_lang}")
+		else:
+			net_twitch.add_node(int(ln[5]),color=f"blue_{n_lang}",maturity="blue",language=f"{n_lang}")
+
+	# Add edges:
+	for i,ln in enumerate(edges_lines):
+		# Ignore header line: node_1,node_2
+		if i==0: continue
+		net_twitch.add_edge(int(ln[0]),int(ln[1]),weight=1.0)
+
+
+	# Save object
+	with open(f"{obj_path}/twitch_full.nx","wb") as tw_out:
+		pickle.dump(net_twitch,tw_out)
+
+
+def process_gplus_full():
+	return
+
+
+
+
+def process_twitter_full():
+	return
 
 
 
 if __name__ == '__main__':
 	### Processing raw data to NetworkX objects with node color attributes
-	# process_proximity_comb()
-	# process_facebook_107_comb()
-
-	# process_proximity_dem()
-	# process_facebook_107_dem()
-
-	process_proximity_full()
+	
+	#process_proximity_full()
 	process_facebook_full()
+	#process_twitch_full()
 
 

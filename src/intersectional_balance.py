@@ -193,8 +193,9 @@ def experiment(network,dems_weight,n_reps=3):
 
 # Experiment in this setting using Louvain
 if __name__ == '__main__':
-	#experiment("proximity_dem",{"subject":1.0,"gender":1.0},2)
-	experiment("facebook_107_dem",{"gender":1.0,"education":1.0},2)
+	#experiment("proximity_full",{"subject":1.0,"gender":1.0},2)
+	#experiment("facebook_full",{"gender":1.0,"education":1.0},2)
+	experiment("twitch_full",{"maturity":1.0,"language":1.0},2)
 
 
 
