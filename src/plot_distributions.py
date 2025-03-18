@@ -220,7 +220,8 @@ def plot_fig4(network,plot_title="",algo_list=[],palette={}):
 
 
 def main():
-	algo_list=["louvain","leiden","walktrap","pycombo","infomap"]
+	#algo_list=["louvain","leiden","walktrap","pycombo","infomap"]
+	algo_list=["louvain","infomap","sbm_dl"]
 	facebook_palette={"gender":"#FF5733","education": "#3498DB"}
 	facebook_vmax=600
 	# Heatmap: intersectional groups
