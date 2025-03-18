@@ -220,21 +220,30 @@ def plot_fig4(network,plot_title="",algo_list=[],palette={}):
 
 
 def main():
-	#algo_list=["louvain","leiden","walktrap","pycombo","infomap"]
 	algo_list=["louvain","infomap","sbm_dl"]
+
 	facebook_palette={"gender":"#FF5733","education": "#3498DB"}
 	facebook_vmax=600
 	# Heatmap: intersectional groups
 	plot_fig1("facebook_full",plot_title="",palette=facebook_palette)
-
 	# Box plot: distribution of demographic balance (per algorithm)
 	plot_fig2("facebook_full",plot_title="",algo_list=algo_list,palette=facebook_palette,vmax=facebook_vmax)
-
 	# Box plot: distribution of demographic balance (per algorithm)
 	plot_fig3("facebook_full",plot_title="",algo_list=algo_list,palette=facebook_palette,vmax=facebook_vmax)
-
 	# Scatterplots: size vs balance (per algorithm)
 	plot_fig4("facebook_full",plot_title="",algo_list=algo_list,palette=facebook_palette)
+
+
+	twitch_palette={"maturity":"#FF5733","language": "#3498DB"}
+	twitch_vmax=50000
+	# Heatmap: intersectional groups
+	plot_fig1("twitch_full",plot_title="",palette=twitch_palette)
+	# Box plot: distribution of demographic balance (per algorithm)
+	plot_fig2("twitch_full",plot_title="",algo_list=algo_list,palette=twitch_palette,vmax=twitch_vmax)
+	# Box plot: distribution of demographic balance (per algorithm)
+	plot_fig3("twitch_full",plot_title="",algo_list=algo_list,palette=twitch_palette,vmax=twitch_vmax)
+	# Scatterplots: size vs balance (per algorithm)
+	plot_fig4("twitch_full",plot_title="",algo_list=algo_list,palette=twitch_palette)
 
 
 

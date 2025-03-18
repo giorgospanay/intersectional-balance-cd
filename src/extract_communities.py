@@ -118,7 +118,7 @@ def experiment(network, dem_list=[]):
 def main():
 	#experiment("proximity_full",dem_list=["subject","gender"])
 	experiment("facebook_full",dem_list=["gender","education"])
-	#experiment("twitch_full",dem_list=["maturity","language"])
+	experiment("twitch_full",dem_list=["maturity","language"])
 
 
 if __name__ == '__main__':

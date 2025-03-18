@@ -467,6 +467,6 @@ if __name__ == '__main__':
 	
 	#process_proximity_full()
 	process_facebook_full()
-	#process_twitch_full()
+	process_twitch_full()
 
 

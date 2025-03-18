@@ -254,9 +254,9 @@ def track_metrics(network, dem_list=[]):
 
 def main():
 	#experiment("proximity_full",dem_list=["subject","gender"])
-	#experiment("twitch_full",dem_list=["maturity","language"])
-	track_metrics("facebook_full",dem_list=["gender","education"])
 	
+	track_metrics("facebook_full",dem_list=["gender","education"])
+	track_metrics("twitch_full",dem_list=["maturity","language"])
 
 
 if __name__ == '__main__':
