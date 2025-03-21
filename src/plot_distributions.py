@@ -249,7 +249,7 @@ def main():
 
 
 	# Load color distribution
-	with open(f"{log_path}/twitch_full_color_dist.dict","rb") as log_in:
+	with open(f"{log_path}/twitch_full_full_color_dist.dict","rb") as log_in:
 		full_color_dist=pickle.load(log_in)
 	print("Distribution loaded from file.")
 
